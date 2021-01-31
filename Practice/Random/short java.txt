@@ -1,0 +1,28 @@
+
+#include<iostream>
+#include<math.h>
+using namespace std;
+
+long long int fact(int n)
+{
+    long long int f=1,i;
+    for(i=1;i<=n;i++)
+        f=f*i;
+    return f;
+}
+int main()
+{
+   long long int i,j,a,b,n,c=0;
+    cin>>a>>b>>n;
+    long long int d[b];
+    for(i=a;i<=b;i++)
+    {
+        if(i%2==1)
+        {
+           d[c++]=i;
+        }
+    }
+    j=(fact(c)/(fact(c-n)*fact(n)));
+    cout<<(j%1000000007);
+    return 0;
+}

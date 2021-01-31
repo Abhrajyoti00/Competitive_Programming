@@ -1,0 +1,23 @@
+
+if __name__ == '__main__':
+    sum_a = 1
+    sum_b = 0
+    X = []
+    A = []
+    B = []
+    n = int(input())
+    for i in range(0,n):
+        X.append(i +1)
+    A.append(1)
+    for i in range(1,n):
+        A.append((A[i - 1])^(X[i]))
+        sum_a += A[i]
+    for i in range(0,n):
+        B.append((A[i])^(X[i]))
+        sum_b += B[i]
+    p = (sum_a - sum_b)
+    print(p)
+    
+        
+
+        

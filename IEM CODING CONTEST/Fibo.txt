@@ -1,0 +1,34 @@
+#include<bits/stdc++.h>
+using namespace std;
+long fib(long a,long b,long c,long d,long e,long n)
+{
+    long L;
+    if(n==4)
+    return 3;
+     if(n==3)
+    return 2;
+     if (n==2)
+    return 1;
+     if(n==1)
+    return 0;
+     L=((a*fib(a,b,c,d,e,(n-1)))%1000000007) + ((b*fib(a,b,c,d,e,(n-2)))%1000000007)+ ((c*fib(a,b,c,d,e,(n-3)))%1000000007)+((d*fib(a,b,c,d,e,(n-4)))%1000000007)+e;
+    
+    return (L%1000000007);
+}
+int main()
+{
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        long n;
+        long a;
+        long b;
+        long c;
+        long d;
+        long e;
+        cin>>a>>b>>c>>d>>e>>n;
+        cout<<fib(a,b,c,d,e,n)<<endl;
+    }
+    return 0;
+}

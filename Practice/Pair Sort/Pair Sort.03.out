@@ -1,0 +1,10 @@
+The vector before sort operation is:
+5 30
+20 60
+10 20
+40 50
+The vector after applying sort operation is:
+20 60
+40 50
+5 30
+10 20
