@@ -26,26 +26,11 @@ const ld EPS = 1e-9;
 
 
 void solve() {
-    ll n;
-    cin>>n;
-    set<ll>st;
-    for(ll i = 0; i<n; i++){
-        ll ele;
-        cin>>ele;
-        st.insert(ele);
-    }
-    vector<int>v;
-    for(auto& it: st)
-        v.push_back(it);
-    ll ans = 0;
-    for(ll i = 0; i<v.size(); i++){
-        ll x = v[i];
-        auto tag = lower_bound(v.begin(), v.end(), x+n);
-        ans = max(ans, tag - v.begin() - i);
-    }
-    cout<<ans<<"\n";
-    return; 
+    int n,m;
+    cin>>n>>m;
+    cout<<n*(m/2)<<endl;
 }
+
 
 int main() {
     ios_base::sync_with_stdio(0);

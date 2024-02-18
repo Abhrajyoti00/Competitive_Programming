@@ -39,8 +39,8 @@ void solve() {
         v.push_back(it);
     ll ans = 0;
     for(ll i = 0; i<v.size(); i++){
-        ll x = v[i];
-        auto tag = lower_bound(v.begin(), v.end(), x+n);
+        v[i] += n;
+        auto tag = lower_bound(v.begin(), v.end(), v[i]);
         ans = max(ans, tag - v.begin() - i);
     }
     cout<<ans<<"\n";
@@ -50,8 +50,8 @@ void solve() {
 int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0); cout.tie(0);
-    int tc;
-    cin >> tc;
+    int tc = 1;
+    // cin >> tc;
     for (int t = 1; t <= tc; t++) {
         // cout << "Case #" << t << ": ";
         solve();

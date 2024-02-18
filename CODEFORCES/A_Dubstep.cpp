@@ -26,32 +26,35 @@ const ld EPS = 1e-9;
 
 
 void solve() {
-    ll n;
-    cin>>n;
-    set<ll>st;
-    for(ll i = 0; i<n; i++){
-        ll ele;
-        cin>>ele;
-        st.insert(ele);
+    string s;
+    cin >> s;
+    s = "WUB" + s + "WUB";
+    int n = s.length();
+    string ns = "";
+    string word = "";
+
+    for (int i = 0; i < n - 2; i++) {
+        if (s[i] == 'W' && s[i + 1] == 'U' && s[i + 2] == 'B') {
+            ns += (word.empty() ? "" : word + " ");
+            i = i + 2;
+            word = "";
+        } else {
+            word += s[i];
+        }
+        // cout<<word<<",";
     }
-    vector<int>v;
-    for(auto& it: st)
-        v.push_back(it);
-    ll ans = 0;
-    for(ll i = 0; i<v.size(); i++){
-        ll x = v[i];
-        auto tag = lower_bound(v.begin(), v.end(), x+n);
-        ans = max(ans, tag - v.begin() - i);
-    }
-    cout<<ans<<"\n";
-    return; 
+
+    ns += (word.empty() ? "" : word);
+
+    cout << ns;
 }
+
 
 int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0); cout.tie(0);
-    int tc;
-    cin >> tc;
+    int tc = 1;
+    // cin >> tc;
     for (int t = 1; t <= tc; t++) {
         // cout << "Case #" << t << ": ";
         solve();
